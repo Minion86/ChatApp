@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/Projects/git/ChatApp/assets/style.css</file>
+            <file>file:/E:/Projects/git/ChatApp/protected/controllers/UserController.php</file>
+            <file>file:/E:/Projects/git/ChatApp/protected/controllers/AjaxuserController.php</file>
+            <file>file:/E:/Projects/git/ChatApp/protected/views/user/login.php</file>
+            <file>file:/E:/Projects/git/ChatApp/protected/components/ScriptManageUser.php</file>
+            <file>file:/E:/Projects/git/ChatApp/protected/views/user/chat.php</file>
+            <file>file:/E:/Projects/git/ChatApp/protected/components/UrlManager.php</file>
+            <file>file:/E:/Projects/git/ChatApp/protected/components/Functions.php</file>
+            <file>file:/E:/Projects/git/ChatApp/protected/views/user/register.php</file>
+            <file>file:/E:/Projects/git/ChatApp/protected/components/Driver.php</file>
+            <file>file:/E:/Projects/git/ChatApp/protected/views/user/chatBotman.php</file>
+            <file>file:/E:/Projects/git/ChatApp/assets/app.js</file>
+        </group>
+    </open-files>
+</project-private>
