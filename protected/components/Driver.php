@@ -14,16 +14,9 @@ class Driver {
 
     public static function islogin() {
         if (isset($_SESSION['chatapp'])) {
-            if (is_numeric($_SESSION['chatapp']['user_id'])) {
+            if (is_numeric($_SESSION['chatapp']['id'])) {
                 return true;
             }
-        }
-        return false;
-    }
-
-    public static function getUserStatus() {
-        if (self::islogin()) {
-            return $_SESSION['chatapp']['status'];
         }
         return false;
     }
@@ -38,7 +31,14 @@ class Driver {
 
     public static function getUserId() {
         if (self::islogin()) {
-            return $_SESSION['chatapp']['user_id'];
+            return $_SESSION['chatapp']['id'];
+        }
+        return false;
+    }
+
+    public static function getUserName() {
+        if (self::islogin()) {
+            return $_SESSION['chatapp']['name'];
         }
         return false;
     }
@@ -57,6 +57,47 @@ class Driver {
 		";
         if ($res = $db->rst($stmt)) {
             return $res[0];
+        }
+        return false;
+    }
+
+    public static function getUserById($id = 0) {
+        $db = new DbExt;
+        $stmt = "SELECT * FROM
+		{{users}}
+		WHERE
+		id=" . self::q($id) . "
+		LIMIT 0,1
+		";
+        if ($res = $db->rst($stmt)) {
+            return $res[0];
+        }
+        return false;
+    }
+
+    public static function getChatsByUser($id = 0) {
+        $db = new DbExt;
+        $stmt = "SELECT * FROM
+		{{chats}}
+		WHERE
+		id_user=" . self::q($id) . "
+		";
+        if ($res = $db->rst($stmt)) {
+            return $res;
+        }
+        return false;
+    }
+
+    public static function getLastChatByUser($id = 0) {
+        $db = new DbExt;
+        $stmt = "SELECT * FROM
+		{{chats}}
+		WHERE
+		id_user=" . self::q($id) . "
+                order by id desc    
+		LIMIT 0,1";
+        if ($res = $db->rst($stmt)) {
+            return $res;
         }
         return false;
     }

@@ -22,7 +22,7 @@ class UserController extends CController {
           } */
         $action_name = $action->id;
         $accept_controller = array('login', 'ajax');
-        $external_controller = array('register','chat');
+        $external_controller = array('register', 'chat');
         if (!Driver::islogin()) {
             if (!in_array($action_name, $external_controller)) {
                 if (!in_array($action_name, $accept_controller)) {
@@ -73,16 +73,24 @@ class UserController extends CController {
     }
 
     public function actionRegister() {
-       
-       
+
+
         $this->render('register', array(
             'email_address' => isset($_GET['email']) ? $_GET['email'] : ''
         ));
     }
-    
-      public function actionChat() {
+
+    public function actionChat() {
+        Yii::app()->clientScript->registerScriptFile(
+                Yii::app()->baseUrl . '/assets/currency.js', CClientScript::POS_END
+        );
        
+        $baseUrl = Yii::app()->baseUrl . "";
+        $cs = Yii::app()->getClientScript();
+        $cs->registerCssFile($baseUrl . "/assets/chat.css");
+
         $this->render('chat', array(
+            'chats' => Driver::getChatsByUser(Driver::getUserId())
         ));
     }
 

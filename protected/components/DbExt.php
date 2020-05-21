@@ -33,16 +33,7 @@ class DbExt {
         return false;
     }
 
-    public function insertDataDevuelveId($table = '', $data = array()) {
-        $connection = Yii::app()->db;
-        $command = Yii::app()->db->createCommand();
-        if ($command->insert($table, $data)) {
-            $id = Yii::app()->db->getLastInsertID();
-            return $id;
-        }
-        return false;
-    }
-
+  
     public function updateData($table = '', $data = array(), $wherefield = '', $whereval = '') {
         $connection = Yii::app()->db;
         $command = Yii::app()->db->createCommand();
