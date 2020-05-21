@@ -2,7 +2,7 @@ Steps to set environment
 
 1. Download and install xampp
 2. Copy files inside xampp installation/htdocs
-3. Create a mysql database and run the script backupchatapp.sql
+3. Create a mysql database and run the script \ChatApp\bdd\bck_chatapp.sql
 4. Open file xampp\htdocs\ChatApp\protected\config\main.php
 and set your database credentials:
 
