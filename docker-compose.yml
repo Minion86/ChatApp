@@ -1,0 +1,11 @@
+version: '2'
+services:
+  php:
+    image: php:7.2.2-apache
+    container_name: php_web
+    build:
+      context: ./
+    volumes:
+      - /ChatApp/:/var/www/html/
+    ports:
+      - 8000:80
