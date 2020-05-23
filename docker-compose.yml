@@ -1,11 +1,15 @@
 version: '2'
 services:
   php:
-    image: php:7.2.2-apache
-    container_name: php_web
-    build:
-      context: ./
+    build: ./docker/php
     volumes:
-      - /ChatApp/:/var/www/html/
+      - ./:/var/www/html/
+      - /var/log/apache2/chatapp:/var/log/apache2/
     ports:
-      - 8000:80
+      - '8000:80'
+    environment:
+     - VIRTUAL_HOST=chat.test.com
+    depends_on:
+              - db        
+  db:
+    build: ./docker/mysql
