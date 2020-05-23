@@ -58,3 +58,9 @@ user: admin@hotmail.com
 pass:123456
 
 chatapp.neldevsys.com
+
+9. To dockerize the application open a terminar and go to its path
+
+and run this command
+
+docker-compose up -d

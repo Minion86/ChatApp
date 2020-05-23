@@ -1,10 +1,9 @@
 version: '2'
 services:
   php:
-    build: ./docker/php
+    build: ./
     volumes:
-      - ./:/var/www/html/
-      - /var/log/apache2/chatapp:/var/log/apache2/
+      - .:/srv/app
     ports:
       - '8000:80'
     environment:
